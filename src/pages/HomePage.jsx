@@ -1,3 +1,7 @@
 export default function HomePage() {
-  return <h1>This is the Home Page!</h1>;
+  return (
+    <div className="wallpaper-home">
+      <h1>Welcome to the Joke Machine!</h1>
+    </div>
+  );
 }
