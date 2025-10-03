@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const http = axios.create({
-  baseURL: "https://v2.jokeapi.dev/joke/Spooky?safe=mode",
+  baseURL: "https://v2.jokeapi.dev/joke/",
 });
 
 const header = {
@@ -10,7 +10,7 @@ const header = {
   },
 };
 export default {
-  getJoke() {
-    return http.get("", header);
+  getJoke(category = "Any") {
+    return http.get(`${category}?safe-mode`, header);
   },
 };

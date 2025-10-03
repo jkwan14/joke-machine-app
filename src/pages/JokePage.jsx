@@ -1,12 +1,17 @@
 import JokeService from "../services/JokeService";
 import { useState, useEffect } from "react";
+import { useLocation } from "react-router-dom";
 
 export default function JokePage() {
   const [setup, setSetup] = useState(null);
   const [delivery, setDelivery] = useState(null);
 
+  const location = useLocation();
+  const params = new URLSearchParams(location.search);
+  const category = params.get("category") || "Any";
+
   function getJoke() {
-    JokeService.getJoke()
+    JokeService.getJoke(category)
       .then((response) => {
         console.log(response.data);
         if (response.data.type === "single") {
@@ -24,12 +29,12 @@ export default function JokePage() {
 
   useEffect(() => {
     getJoke();
-  }, []);
+  }, [category]);
 
   return (
     <>
       <div className="wallpaper-joke">
-        <h1>This is the Joke Page!</h1>
+        <h1>Here's your joke:</h1>
 
         <h2>{setup || "loading joke..."}</h2>
 
