@@ -33,6 +33,7 @@ export default function HomePage() {
             )
           )}
         </fieldset>
+
         <button type="submit">Generate Joke</button>
       </form>
     </div>
