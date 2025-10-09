@@ -13,7 +13,7 @@ export default function HomePage() {
   return (
     <div className="wallpaper-home">
       <h1>Welcome to the Joke Machine!</h1>
-
+      <img src="/smiles.jpg" alt="smiley faces" className="header-image" />
       <form onSubmit={handleSubmit}>
         <fieldset>
           <legend>Please select a category:</legend>
@@ -36,6 +36,13 @@ export default function HomePage() {
 
         <button type="submit">Generate Joke</button>
       </form>
+
+      <p className="note">
+        Note from JokeAPI: JokeAPI will try its best to serve only jokes that
+        are considered safe for everyone by defaulting to safe mode. This filter
+        generally works but that doesn't mean human error is out of the
+        question.
+      </p>
     </div>
   );
 }

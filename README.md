@@ -66,7 +66,7 @@ Follow these steps to run the app locally:
 
 ## ⚙️ Future Improvements
 
-    Add a "Next Joke" button to fetch new jokes without navigating back to home
+    Add more categories (more holidays etc.)
 
     Allow users to save favorite jokes
 

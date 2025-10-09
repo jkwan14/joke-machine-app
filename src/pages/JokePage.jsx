@@ -1,12 +1,13 @@
 import JokeService from "../services/JokeService";
 import { useState, useEffect } from "react";
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 
 export default function JokePage() {
   const [setup, setSetup] = useState(null);
   const [delivery, setDelivery] = useState(null);
 
   const location = useLocation();
+  const navigate = useNavigate();
   const params = new URLSearchParams(location.search);
   const category = params.get("category") || "Any";
 
@@ -35,7 +36,11 @@ export default function JokePage() {
     <>
       <div className="wallpaper-joke">
         <h1>Here's your joke:</h1>
-
+        <img
+          src="/smiley_face.jpg"
+          alt="melting smiley face"
+          className="header-image"
+        />
         <h2>{setup || "loading joke..."}</h2>
 
         <h2>
@@ -45,6 +50,16 @@ export default function JokePage() {
             </p>
           )}
         </h2>
+        <div className="joke-buttons">
+          <button onClick={() => navigate("/")}>Home</button>
+          <button onClick={getJoke}>Generate Another Joke</button>
+        </div>
+        <p className="note">
+          Note from JokeAPI: JokeAPI will try its best to serve only jokes that
+          are considered safe for everyone by defaulting to safe mode. This
+          filter generally works but that doesn't mean human error is out of the
+          question.
+        </p>
       </div>
     </>
   );

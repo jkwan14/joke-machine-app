@@ -75,18 +75,45 @@ fieldset label {
   margin: 6px 0;
 }
 
+.note {
+  text-align: center;
+  margin-top: auto;
+  padding-bottom: 20px;
+  font-size: 1rem;
+  color: black;
+  opacity: 0.8;
+}
+
 .wallpaper-home {
-  background-image: url("/smiles.jpg");
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: contain;
-  height: 100vh;
+  min-height: 100vh;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
 }
 
 .wallpaper-joke {
-  background-image: url("/smiley_face.jpg");
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: contain;
-  height: 100vh;
+  min-height: 100vh;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+}
+
+.joke-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 30px;
+}
+
+.header-image {
+  width: 500px;
+  height: auto;
+  display: block;
+  margin: 0 auto 20px;
 }
