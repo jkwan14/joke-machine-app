@@ -1,10 +1,4 @@
-import {
-  BrowserRouter,
-  Link,
-  Routes,
-  Route,
-  useLocation,
-} from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "./App.css";
 import HomePage from "./pages/HomePage";
 import JokePage from "./pages/JokePage";
